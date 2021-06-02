@@ -1,0 +1,79 @@
+body{
+    background-color: #7cc3f2;
+    color: white;
+    font-size: 18px;
+}
+
+.container{
+    width: 95%;
+    margin-top: 10px;
+}
+
+.btn-search{
+    background-color: white;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.input-style{
+    border-color: #6c757d;
+}
+
+.cities{
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.city-name{
+    font-family: Gill Sans, sans-serif;
+    display: grid;
+    grid-area: cname;
+    margin: auto;
+    font-size: 30px;
+}
+
+.temperature{
+    display: grid;
+    grid-area: temp;
+    margin: auto;
+}
+
+.toggle{
+    display: grid;
+    grid-area: tog;
+    margin: auto;
+}
+
+.city-weather-image{
+    display: grid;
+    grid-area: Cimg;
+    margin: auto;
+}
+
+.city-condition{
+    display: grid;
+    grid-area: cond;
+    margin: auto;
+}
+
+.city{
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+    'tog cname cname Cimg Cimg '
+    'tog cname cname Cimg Cimg'
+    'tog cname cname Cimg Cimg'
+    'tog temp temp cond cond';
+    align-items: center;
+    margin: 5px;
+    background: transparent;
+    border-radius: 1px;
+    box-shadow: #040404 2px 2px 4px;
+}
+
+.add-city{
+
+    cursor: pointer;
+    display: inline-block;
+    transition: opacity .15s;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="./jquery/dist/jquery.js"></script>
+    <script src="./bootstrap/dist/js/bootstrap.js"></script>
+    <script src="./handlebars/dist/handlebars.js"></script>
+    <script src="./sweetalert2/dist/sweetalert2.js"></script>
+    <script defer src="./@fortawesome/fontawesome-free/js/brands.js"></script>
+    <script defer src="./@fortawesome/fontawesome-free/js/solid.js"></script>
+    <script defer src="./@fortawesome/fontawesome-free/js/fontawesome.js"></script>
+
+    <link rel="Weather icon" href="../images/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="./sweetalert2/dist/sweetalert2.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="input-group mb-3 container">
+        <input type="text" id="city-input" class="form-control input-style city-input" placeholder="City"
+            aria-label="City" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+            <button id="btn-search" class="btn btn-outline-secondary btn-search" type="button">Search</button>
+        </div>
+    </div>
+
+    <script id="city-template" type="text/x-handlebars-template">
+        {{#each data}}
+            <div class=" city">
+                <div class="toggle">
+                    {{#if isInDatabase}}
+                        <button type="button" class="remove-city btn btn-outline-danger"><i class="fas fa-minus-circle"></i></button>
+                    {{else}}
+                        <button type="button" class="add-city btn btn-outline-success"><i class="fas fa-plus-circle"></i></button>
+                    {{/if}}
+                </div>
+                <p class="temperature">{{temperature}}°</p>
+                <h5 class="city-name">{{name}}</h5>
+                <img class="city-weather-image " src="{{conditionPic}}" alt="City Weather Image">
+                <p class="city-condition ">{{condition}}</p>
+                  
+            </div>
+        {{/each}}
+    </script>
+
+    <div class="cities"></div>
+
+    <script src="TempManager.js"></script>
+    <script src="Renderer.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
