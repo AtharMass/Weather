@@ -5,7 +5,7 @@ const api = require('./server/routes/api')
 
 var app = express()
 
-mongoose.connect("mongodb://localhost/weather")
+mongoose.connect(process.env.MONGODB_URI||"mongodb://localhost/weather")
 
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
@@ -20,7 +20,7 @@ app.use('/', api)
 Start the server:
 =======================================================*/
 const port = 7070
-app.listen(port, function() {
+app.listen(process.env.PORT || port, function() {
     console.log(`Server up and running on port ${port}`)
 })
   
